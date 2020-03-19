@@ -10,5 +10,9 @@ services:
       - NODE_ENV=development
       - HOST=0.0.0.0
 
-  # products:
-  #   build: ./services/products
+  products:
+    build: ./services/products
+    volumes:
+      - './services/products:/go/src/products'
+    ports:
+      - "8080:8080"
