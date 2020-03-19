@@ -1,0 +1,14 @@
+version: '3'
+services:
+  client:
+    build: ./services/client
+    volumes:
+      - './services/client:/app'
+    ports:
+      - 3000
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+
+  # products:
+  #   build: ./services/products
