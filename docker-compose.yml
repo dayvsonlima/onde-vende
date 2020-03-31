@@ -1,14 +1,14 @@
 version: '3'
 services:
-  client:
-    build: ./services/client
-    volumes:
-      - './services/client:/app'
-    ports:
-      - 3000
-    environment:
-      - NODE_ENV=development
-      - HOST=0.0.0.0
+  # client:
+  #   build: ./services/client
+  #   volumes:
+  #     - './services/client:/app'
+  #   ports:
+  #     - 3000
+  #   environment:
+  #     - NODE_ENV=development
+  #     - HOST=0.0.0.0
 
   products:
     build: ./services/products
@@ -16,3 +16,10 @@ services:
       - './services/products:/go/src/products'
     ports:
       - "8080:8080"
+
+  website:
+    build: ./services/website
+    volumes:
+      - './services/website:/go/src/website'
+    ports:
+      - "8081:8080"
